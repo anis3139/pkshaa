@@ -13,6 +13,47 @@
     .form-group input[type="number"] ~ label.error,
     .form-group select ~ label.error,
     .form-group textarea ~ label.error { display: none !important; }
+
+    .heading::after{
+        content: '';
+        border-bottom: 3px solid rgb(172, 153, 153);
+        width: 250px;
+        display: block;
+    }
+    .heading-2::after{
+        content: '';
+        border-bottom: 1px solid rgb(234, 222, 222);
+        width: 250px;
+        display: block;
+    }
+
+    .box {
+            color: #fff;
+            padding: 20px;
+            display: none;
+        }
+
+        .box p {
+            margin-bottom: 5px;
+            line-height: 1;
+        }
+
+        .red {
+            background: blue;
+        }
+
+        .green {
+            background: pink;
+        }
+
+        .blue {
+            background: violet;
+        }
+
+        .yellow {
+            background: orange;
+
+        }
     </style>
 @endsection
 
@@ -41,128 +82,268 @@
 			<div class="content-wrap">
 				<div class="container clearfix">
 
-					<div class="form-widget">
+					<div class="form-widgets">
 
 						<div class="form-result"></div>
                         @include('errors.message')
                         @include('errors.errorMessage')
 						<div class="row">
-							<div class="col-lg-6">
-								<form class="row" id="event-registration" action="include/form.php" method="post" enctype="multipart/form-data">
-									<div class="form-process">
-										<div class="css3-spinner">
-											<div class="css3-spinner-scaler"></div>
-										</div>
+							<div class="col-lg-12">
+								<form class="row"  action="{{route('user.registration.store')}}" method="post" enctype="multipart/form-data">
+                                    @csrf
+                                    <h3 class="heading">Personal Information</h3>
+									<div class="col-6 form-group">
+										<label>Name (English):</label>
+										<input type="text" name="name" required id="name" class="form-control required" value="" placeholder="Enter your name in english">
+									</div>
+                                    <div class="col-6 form-group">
+										<label>Name (Bangla):</label>
+										<input type="text" required name="name-bn" id="name-bn" class="form-control required" value="" placeholder="Enter your name in bangla">
 									</div>
 									<div class="col-6 form-group">
-										<label>First Name:</label>
-										<input type="text" name="event-registration-first-name" id="event-registration-first-name" class="form-control required" value="" placeholder="Enter your First Name">
+										<label>Fathers Name:</label>
+										<input type="text" name="fathers-name" id="fathers-name" class="form-control required" value="" placeholder="Enter your fathers name">
 									</div>
 									<div class="col-6 form-group">
-										<label>Last Name:</label>
-										<input type="text" name="event-registration-last-name" id="event-registration-last-name" class="form-control required" value="" placeholder="Enter your Last Name">
-									</div>
-									<div class="col-12 form-group">
-										<label>Email:</label>
-										<input type="email" name="event-registration-email" id="event-registration-email" class="form-control required" value="" placeholder="Enter your Email Address">
+										<label>Mothers Name:</label>
+										<input type="text" name="mothers-name" id="mothers-name" class="form-control required" value="" placeholder="Enter your mothers name">
 									</div>
 									<div class="col-6 form-group">
+										<label>Spouse Name (optional):</label>
+										<input type="text" name="spouse-name" id="spouse-name" class="form-control" value="" placeholder="Enter your spouse name">
+									</div>
+                                    <div class="col-6 form-group">
 										<label>Gender:</label><br>
 										<div class="form-check form-check-inline">
-											<input class="form-check-input required" type="radio" name="event-registration-gender"id="event-registration-gender-male" value="Male">
+											<input class="form-check-input required" type="radio" name="gender"id="event-registration-gender-male" value="Male">
 											<label class="form-check-label nott" for="event-registration-gender-male">Male</label>
 										</div>
 										<div class="form-check form-check-inline">
-											<input class="form-check-input" type="radio" name="event-registration-gender"id="event-registration-gender-female" value="Female">
+											<input class="form-check-input" type="radio" name="gender"id="event-registration-gender-female" value="Female">
 											<label class="form-check-label nott" for="event-registration-gender-female">Female</label>
 										</div>
 									</div>
+
+
 									<div class="col-6 form-group">
-										<label>Interests</label>
-										<select class="form-select required" name="event-registration-interests" id="event-registration-interests">
-											<option value="">-- Select One --</option>
-											<option value="UX Design">UX Design</option>
-											<option value="Backend Development">Backend Development</option>
-											<option value="Videography">Videography</option>
-											<option value="VFX Animations">VFX Animations</option>
-											<option value="Others">Others</option>
-										</select>
-									</div>
-									<div class="col-12">
-										<div class="form-group">
-											<label>Website:</label>
-											<input type="text" name="event-registration-website" id="event-registration-website" class="form-control required url" value="https://" placeholder="Enter your Website Address">
-										</div>
-										<div class="form-group">
-											<label>Bio:</label>
-											<textarea name="event-registration-bio" id="event-registration-bio" class="form-control required" cols="30" rows="5"></textarea>
-										</div>
-									</div>
-									<div class="col-6 form-group">
-										<label>Social Media Handles:</label>
-										<div class="input-group">
-											<span class="input-group-text">Twitter</span>
-											<input type="text" name="event-registration-twitter" id="event-registration-twitter" class="form-control" value="" placeholder="@username">
-										</div>
-									</div>
-									<div class="col-6 form-group">
-										<label for="">&nbsp;</label>
-										<div class="input-group">
-											<span class="input-group-text">Github</span>
-											<input type="text" name="event-registration-github" id="event-registration-github" class="form-control" value="" placeholder="@username">
-										</div>
-									</div>
-									<div class="col-12">
-										<div class="form-group">
-											<label>Event Passes</label>
-											<select class="form-select required" name="event-registration-passes" id="event-registration-passes">
-												<option value="">-- Select One --</option>
-												<option value="Contributors Day + Main Event">Contributors Day + Main Event</option>
-												<option value="Main Event only">Main Event only</option>
-												<option value="VIP Access">All Days + VIP Access to Insiders Club</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-12">
-										<div class="form-group">
-											<label>How did you hear about the Event?</label>
-											<select class="form-select required" name="event-registration-know-us" id="event-registration-know-us">
-												<option value="">-- Select One --</option>
-												<option value="Google">Google</option>
-												<option value="Social Media">Social Media</option>
-												<option value="Friends">Friends</option>
-												<option value="Advertisement">Advertisement</option>
-												<option value="Others">Others</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-12 d-none">
-										<input type="text" id="event-registration-botcheck" name="event-registration-botcheck" value="" />
-									</div>
-									<div class="col-12">
-										<button type="submit" name="event-registration-submit" class="btn btn-secondary">Register</button>
+										<label>Blood Group:</label>
+										<input type="text" name="blood-group" id="blood-group" class="form-control" value="" placeholder="Enter your blood group">
 									</div>
 
-									<input type="hidden" name="prefix" value="event-registration-">
+									<div class="col-6 form-group">
+										<label>Date of Birth:</label>
+										<input type="date" name="birth-date" id="birth-date" class="form-control" value="" placeholder="Enter your birth date">
+									</div>
+									<div class="col-6 form-group">
+										<label>Nationality:</label>
+										<input type="text" name="nationality" id="nationality" class="form-control" value="" placeholder="Enter your nationality">
+									</div>
+									<div class="col-6 form-group">
+										<label>NID:</label>
+										<input type="number" name="nid" id="nid" class="form-control" value="" placeholder="Enter your NID number">
+									</div>
+									<div class="col-6 form-group">
+										<label>Religion:</label>
+										<input type="text" name="nid" id="nid" class="form-control" value="" placeholder="Enter your religion">
+									</div>
+									<div class="col-6 row form-group">
+                                        <div class="col-6 form-group">
+                                            <label>Picture:</label>
+                                            <input type="file" required name="picture" id="picture" class="form-control" value="">
+                                        </div>
+                                        <div class="col-6">
+                                            <img src="{{asset('assets/images/profile.jpeg')}}" id="picture-show" alt="" width="150px">
+                                        </div>
+									</div>
+
+
+
+
+                                    <h3 class="heading mt-5">Educational Information</h3>
+
+                                    <div class="col-6 form-group">
+										<label>Passing year of SSC:</label>
+										<input required type="text" name="ssc" id="ssc" class="form-control" value="" placeholder="Enter your passing year of ssc">
+									</div>
+                                    <div class="col-6 form-group">
+										<label>Last Educational Qualification:</label>
+										<input type="text" name="last-educational-qualification" id="last-educational-qualification" class="form-control" value="" placeholder="Enter your last educational qualification">
+									</div>
+                                    <div class="col-6 form-group">
+										<label>Last Educational Institution:</label>
+										<input type="text" name="last-educational-qualification" id="last-educational-qualification" class="form-control" value="" placeholder="Enter your last educational qualification">
+									</div>
+                                    <div class="col-6 form-group">
+										<label>Others:</label>
+										<input type="text" name="education-others" id="education-others" class="form-control" value="" placeholder="Others">
+									</div>
+
+
+
+
+                                    <h3 class="heading mt-5">Contact Information</h3>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <p class="heading-2 mt-2">Present Address</p>
+                                            <div class="col-12 form-group">
+                                                <label>Village:</label>
+                                                <input required type="text" name="village-name" id="village-name" class="form-control" value="" placeholder="Enter your village name">
+                                            </div>
+                                            <div class="col-12 form-group">
+                                                <label>Post Office:</label>
+                                                <input required type="text" name="post" id="post" class="form-control" value="" placeholder="Enter your post office">
+                                            </div>
+                                            <div class="col-12 form-group">
+                                                <label>Upazila:</label>
+                                                <input required type="text" name="upazila" id="upazila" class="form-control" value="" placeholder="Enter your upazila">
+                                            </div>
+                                            <div class="col-12 form-group">
+                                                <label>District:</label>
+                                                <input required type="text" name="district" id="district" class="form-control" value="" placeholder="Enter your district">
+                                            </div>
+
+                                            <div class="col-12 form-group">
+                                                <label>Email:</label>
+                                                <input required type="email" name="email" id="email" class="form-control required" value="" placeholder="Enter your Email Address">
+                                            </div>
+                                            <div class="col-12 form-group">
+                                                <label>Mobile:</label>
+                                                <input required type="text" name="phone" id="phone" class="form-control required" value="" placeholder="Enter your mobile number">
+                                            </div>
+                                            <div class="col-12 form-group">
+                                                <label>Emergency Mobile Number:</label>
+                                                <input type="text" name="emergency-mobile" id="emergency-mobile" class="form-control required" value="" placeholder="Enter your emergency mobile number">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p class="heading-2 mt-2">Permanent Address</p>
+                                            <div class="col-12 form-group">
+                                                <label>Village:</label>
+                                                <input type="text" name="village-name-permanent" id="village-name-permanent" class="form-control" value="" placeholder="Enter your village name">
+                                            </div>
+                                            <div class="col-12 form-group">
+                                                <label>Post Office:</label>
+                                                <input type="text" name="post-permanent" id="post-permanent" class="form-control" value="" placeholder="Enter your post office">
+                                            </div>
+                                            <div class="col-12 form-group">
+                                                <label>Upazila:</label>
+                                                <input type="text" name="upazila-permanent" id="upazila-permanent" class="form-control" value="" placeholder="Enter your upazila">
+                                            </div>
+                                            <div class="col-12 form-group">
+                                                <label>District:</label>
+                                                <input type="text" name="district-permanent" id="district-permanent" class="form-control" value="" placeholder="Enter your district">
+                                            </div>
+                                            <div class="col-12 form-group">
+                                                <label>Whatsup:</label>
+                                                <input type="text" name="whatsup" id="whatsup" class="form-control" value="" placeholder="Enter your whatsup number">
+                                            </div>
+                                            <div class="col-12 form-group">
+                                                <label>Facebook:</label>
+                                                <input type="text" name="facebook" id="facebook" class="form-control" value="" placeholder="Enter your facebook id">
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+
+
+
+                                    <h3 class="heading mt-5">Ceremonial Information</h3>
+
+
+                                    <div class="col-6 form-group">
+										<label>No of guest:</label>
+										<div class="input-group">
+											<span class="input-group-text">Own (1) + </span>
+											<input required type="number" name="event-registration-github" id="event-registration-github" class="form-control" value="" placeholder="Enter only guest number">
+										</div>
+									</div>
+
+									<div class="col-6 form-group">
+										<label>T Shirt Size</label>
+										<select required class="form-select required" name="t-shirt" id="t-shirt">
+											<option value="">-- Select One --</option>
+											<option value="m">Medium (M)</option>
+											<option value="l">Large (L)</option>
+											<option value="xl">Extra Large (XL)</option>
+											<option value="xxl">Extra Extra Large (XXL)</option>
+										</select>
+									</div>
+
+                                    <p class="heading-2 mt-2">Registration Fee</p>
+                                    <div class="col-4 form-group">
+                                        <label>Own Fee:</label>
+                                        <input required type="number" name="own-fee" id="own-fee" class="form-control" value="" placeholder="Enter your own fee">
+                                    </div>
+                                    <div class="col-4 form-group">
+                                        <label>Guest Fee:</label>
+                                        <input required type="number" name="guest-fee" id="guest-fee" class="form-control" value="" placeholder="Enter your guest fee">
+                                    </div>
+                                    <div class="col-4 form-group">
+                                        <label>Total:</label>
+                                        <input required type="number" name="total-fee" id="total-fee" class="form-control" value="" placeholder="Enter your total fee">
+                                    </div>
+
+
+
+                                    <p class="heading-2 mt-2">Registration Payment</p>
+                                            <div class="cart_item row">
+                                                <div class="cart-product-name col-md-6"  id="deliveryLocation">
+                                                    <label><input type="radio" checked name="payment_details" id="green"
+                                                            value="cash">
+                                                        Cash</label><br>
+                                                    <label><input type="radio" name="payment_details" id="blue" value="bkash">
+                                                        Bkash</label><br>
+                                                    <label><input type="radio" name="payment_details" id="yellow" value="bank">
+                                                        Bank</label><br>
+                                                </div>
+
+                                                <div class="cart-product-name col-md-6">
+
+                                                    <div class="green box bkash">
+                                                        <p>Receiver Name</p>
+
+                                                    </div>
+                                                    <div class="blue box">
+                                                        <p>Bkash Merchant Number:</p>
+                                                        <p>
+
+                                                          00000000000000000
+                                                        </p>
+                                                    </div>
+                                                    <div class="yellow box">
+                                                        <p>Bank Details:</p>
+                                                    </div>
+                                                    <input  required class="form-control" type="text"
+                                                    name="transection_id" placeholder="Receiver Name / Transaction ID">
+                                                </div>
+                                            </div>
+
+
+                                    <div class="row mt-3">
+
+                                        <p class="heading-2 mt-2">Create Account</p>
+                                        <div class="col-6 form-group ">
+                                            <label>Password:</label>
+                                            <input required type="password" name="password" id="total-fee" class="form-control" value="" min="6" placeholder="Enter your password">
+                                        </div>
+
+                                        <div class="col-6 form-group">
+                                            <label>Confirm Password:</label>
+                                            <input required type="password" name="password_confirmation" id="total-fee" class="form-control" value="" placeholder="Confirm your password">
+                                        </div>
+                                    </div>
+
+									<div class="col-12 mt-5">
+										<button type="submit"  class="btn btn-primary  btn-lg btn-block">Register</button>
+									</div>
+
 								</form>
 							</div>
 
-							<div class="col-lg-6 ps-lg-4">
-								<p><span class="dropcap">F</span>oster best practices effectiveness inspire breakthroughs solve immunize turmoil. Policy dialogue peaceful The Elders rural global support. Process inclusive innovate readiness, public sector complexity. Lifting people up cornerstone partner, technology working families civic engagement activist recognize potential global network. Countries tackling solution respond change-makers tackle. Assistance, giving; fight against malnutrition experience in the field lasting change scalable. Empowerment long-term, fairness policy community progress social responsibility; Cesar Chavez recognition. Expanding community ownership visionary indicator pursue these aspirations accessibility. Achieve; worldwide, life-saving initiative facilitate. New approaches, John Lennon humanitarian relief fundraise vaccine Jane Jacobs community health workers Oxfam. Our ambitions informal economies.</p>
 
-								<blockquote class="topmargin bottommargin">
-									<p>Human rights healthcare immunize; advancement grantees. Medical supplies; meaningful, truth technology catalytic effect. Promising development capacity building international enable poverty.</p>
-								</blockquote>
-
-								<div class="w-100">
-									<p>Provide, Aga Khan, interconnectivity governance fairness replicable, new approaches visionary implementation. End hunger evolution, future promising development youth. Public sector, small-scale farmers; harness facilitate gender. Contribution dedicated global change movements, prosperity accelerate progress citizens of change. Elevate; accelerate reduce child mortality; billionaire philanthropy fluctuation, plumpy'nut care opportunity catalyze. Partner deep.</p>
-								</div>
-
-								<div class="w-100">
-									<p>Frontline harness criteria governance freedom contribution. Campaign Angelina Jolie natural resources, Rockefeller peaceful philanthropy human potential. Justice; outcomes reduce carbon emissions nonviolent resistance human being. Solve innovate aid communities; benefit truth rural development UNICEF meaningful work. Generosity Action Against Hunger relief; many voices impact crisis situation poverty pride. Vaccine carbon.</p>
-								</div>
-
-							</div>
 						</div>
 
 					</div>
@@ -171,4 +352,35 @@
 			</div>
 		</section><!-- #content end -->
 
+@endsection
+@section('js')
+<script>
+
+
+
+    $(document).ready(function() {
+        var targetBox = $('.bkash');
+        $(targetBox).show();
+        var checkbox = $('#deliveryLocation input[type="radio"]')
+
+        checkbox.change(function() {
+            var inputValue = $(this).attr("id");
+            var targetBox = $("." + inputValue);
+            $(".box").not(targetBox).hide();
+            $(targetBox).show();
+
+        });
+    });
+
+
+    $('#picture').change(function() {
+        var reader = new FileReader();
+        reader.readAsDataURL(this.files[0]);
+        reader.onload = function(event) {
+            var ImgSource = event.target.result;
+            $('#picture-show').attr('src', ImgSource)
+        }
+    })
+
+</script>
 @endsection
