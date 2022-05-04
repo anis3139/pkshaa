@@ -98,19 +98,19 @@
 									</div>
                                     <div class="col-6 form-group">
 										<label>Name (Bangla):</label>
-										<input type="text" required name="name-bn" id="name-bn" class="form-control required" value="" placeholder="Enter your name in bangla">
+										<input type="text" required name="name_bn" id="name_bn" class="form-control required" value="" placeholder="Enter your name in bangla">
 									</div>
 									<div class="col-6 form-group">
 										<label>Fathers Name:</label>
-										<input type="text" name="fathers-name" id="fathers-name" class="form-control required" value="" placeholder="Enter your fathers name">
+										<input type="text" name="fathers_name" id="fathers_name" class="form-control required" value="" placeholder="Enter your fathers name">
 									</div>
 									<div class="col-6 form-group">
 										<label>Mothers Name:</label>
-										<input type="text" name="mothers-name" id="mothers-name" class="form-control required" value="" placeholder="Enter your mothers name">
+										<input type="text" name="mothers_name" id="mothers_name" class="form-control required" value="" placeholder="Enter your mothers name">
 									</div>
 									<div class="col-6 form-group">
 										<label>Spouse Name (optional):</label>
-										<input type="text" name="spouse-name" id="spouse-name" class="form-control" value="" placeholder="Enter your spouse name">
+										<input type="text" name="spouse_name" id="spouse_name" class="form-control" value="" placeholder="Enter your spouse name">
 									</div>
                                     <div class="col-6 form-group">
 										<label>Gender:</label><br>
@@ -127,12 +127,12 @@
 
 									<div class="col-6 form-group">
 										<label>Blood Group:</label>
-										<input type="text" name="blood-group" id="blood-group" class="form-control" value="" placeholder="Enter your blood group">
+										<input type="text" name="blood_group" id="blood_group" class="form-control" value="" placeholder="Enter your blood group">
 									</div>
 
 									<div class="col-6 form-group">
 										<label>Date of Birth:</label>
-										<input type="date" name="birth-date" id="birth-date" class="form-control" value="" placeholder="Enter your birth date">
+										<input type="date" name="birth_date" id="birth_date" class="form-control" value="" placeholder="Enter your birth date">
 									</div>
 									<div class="col-6 form-group">
 										<label>Nationality:</label>
@@ -167,15 +167,15 @@
 									</div>
                                     <div class="col-6 form-group">
 										<label>Last Educational Qualification:</label>
-										<input type="text" name="last-educational-qualification" id="last-educational-qualification" class="form-control" value="" placeholder="Enter your last educational qualification">
+										<input type="text" name="last_educational_qualification" id="last_educational_qualification" class="form-control" value="" placeholder="Enter your last educational qualification">
 									</div>
                                     <div class="col-6 form-group">
 										<label>Last Educational Institution:</label>
-										<input type="text" name="last-educational-qualification" id="last-educational-qualification" class="form-control" value="" placeholder="Enter your last educational qualification">
+										<input type="text" name="last_educational_institution" id="last_educational_qualification" class="form-control" value="" placeholder="Enter your last educational qualification">
 									</div>
                                     <div class="col-6 form-group">
 										<label>Others:</label>
-										<input type="text" name="education-others" id="education-others" class="form-control" value="" placeholder="Others">
+										<input type="text" name="education_others" id="education_others" class="form-control" value="" placeholder="Others">
 									</div>
 
 
@@ -187,7 +187,7 @@
                                             <p class="heading-2 mt-2">Present Address</p>
                                             <div class="col-12 form-group">
                                                 <label>Village:</label>
-                                                <input required type="text" name="village-name" id="village-name" class="form-control" value="" placeholder="Enter your village name">
+                                                <input required type="text" name="village_name" id="village_name" class="form-control" value="" placeholder="Enter your village name">
                                             </div>
                                             <div class="col-12 form-group">
                                                 <label>Post Office:</label>
@@ -212,26 +212,26 @@
                                             </div>
                                             <div class="col-12 form-group">
                                                 <label>Emergency Mobile Number:</label>
-                                                <input type="text" name="emergency-mobile" id="emergency-mobile" class="form-control required" value="" placeholder="Enter your emergency mobile number">
+                                                <input type="text" name="emergency_mobile" id="emergency_mobile" class="form-control required" value="" placeholder="Enter your emergency mobile number">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <p class="heading-2 mt-2">Permanent Address</p>
                                             <div class="col-12 form-group">
                                                 <label>Village:</label>
-                                                <input type="text" name="village-name-permanent" id="village-name-permanent" class="form-control" value="" placeholder="Enter your village name">
+                                                <input type="text" name="village_name_permanent" id="village_name_permanent" class="form-control" value="" placeholder="Enter your village name">
                                             </div>
                                             <div class="col-12 form-group">
                                                 <label>Post Office:</label>
-                                                <input type="text" name="post-permanent" id="post-permanent" class="form-control" value="" placeholder="Enter your post office">
+                                                <input type="text" name="post_permanent" id="post_permanent" class="form-control" value="" placeholder="Enter your post office">
                                             </div>
                                             <div class="col-12 form-group">
                                                 <label>Upazila:</label>
-                                                <input type="text" name="upazila-permanent" id="upazila-permanent" class="form-control" value="" placeholder="Enter your upazila">
+                                                <input type="text" name="upazila_permanent" id="upazila_permanent" class="form-control" value="" placeholder="Enter your upazila">
                                             </div>
                                             <div class="col-12 form-group">
                                                 <label>District:</label>
-                                                <input type="text" name="district-permanent" id="district-permanent" class="form-control" value="" placeholder="Enter your district">
+                                                <input type="text" name="district_permanent" id="district_permanent" class="form-control" value="" placeholder="Enter your district">
                                             </div>
                                             <div class="col-12 form-group">
                                                 <label>Whatsup:</label>
@@ -257,13 +257,13 @@
 										<label>No of guest:</label>
 										<div class="input-group">
 											<span class="input-group-text">Own (1) + </span>
-											<input required type="number" name="event-registration-github" id="event-registration-github" class="form-control" value="" placeholder="Enter only guest number">
+											<input type="number" name="guest" id="guest" class="form-control" value="" placeholder="Enter only guest number">
 										</div>
 									</div>
 
 									<div class="col-6 form-group">
 										<label>T Shirt Size</label>
-										<select required class="form-select required" name="t-shirt" id="t-shirt">
+										<select required class="form-select required" name="t-shirt" id="t_shirt">
 											<option value="">-- Select One --</option>
 											<option value="m">Medium (M)</option>
 											<option value="l">Large (L)</option>
@@ -275,15 +275,15 @@
                                     <p class="heading-2 mt-2">Registration Fee</p>
                                     <div class="col-4 form-group">
                                         <label>Own Fee:</label>
-                                        <input required type="number" name="own-fee" id="own-fee" class="form-control" value="" placeholder="Enter your own fee">
+                                        <input  type="number" name="own_fee" id="own_fee" class="form-control" value="" placeholder="Enter your own fee">
                                     </div>
                                     <div class="col-4 form-group">
                                         <label>Guest Fee:</label>
-                                        <input required type="number" name="guest-fee" id="guest-fee" class="form-control" value="" placeholder="Enter your guest fee">
+                                        <input  type="number" name="guest_fee" id="guest_fee" class="form-control" value="" placeholder="Enter your guest fee">
                                     </div>
                                     <div class="col-4 form-group">
                                         <label>Total:</label>
-                                        <input required type="number" name="total-fee" id="total-fee" class="form-control" value="" placeholder="Enter your total fee">
+                                        <input  type="number" name="total_fee" id="total_fee" class="form-control" value="" placeholder="Enter your total fee">
                                     </div>
 
 
@@ -327,17 +327,17 @@
                                         <p class="heading-2 mt-2">Create Account</p>
                                         <div class="col-6 form-group ">
                                             <label>Password:</label>
-                                            <input required type="password" name="password" id="total-fee" class="form-control" value="" min="6" placeholder="Enter your password">
+                                            <input required type="password" name="password" id="password" class="form-control" value="" min="6" placeholder="Enter your password">
                                         </div>
 
                                         <div class="col-6 form-group">
                                             <label>Confirm Password:</label>
-                                            <input required type="password" name="password_confirmation" id="total-fee" class="form-control" value="" placeholder="Confirm your password">
+                                            <input required type="password" name="password_confirmation" id="password_confirmation" class="form-control" value="" placeholder="Confirm your password">
                                         </div>
                                     </div>
 
 									<div class="col-12 mt-5">
-										<button type="submit"  class="btn btn-primary  btn-lg btn-block">Register</button>
+										<button type="submit"  class="btn btn-primary  btn-lg btn-block">Submit</button>
 									</div>
 
 								</form>

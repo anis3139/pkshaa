@@ -41,42 +41,42 @@ class RegistrationController extends Controller
     {
         $data= $request->only(
             "name",
-            "name-bn",
-            "fathers-name",
-            "mothers-name",
-            "spouse-name",
-            "blood-group",
-            "birth-date",
+            "name_bn",
+            "fathers_name",
+            "mothers_name",
+            "spouse_name",
+            "blood_group",
+            "birth_date",
             "nationality",
             "nid",
             "ssc",
-            "last-educational-qualification",
-            "education-others",
-            "village-name",
+            "last_educational_qualification",
+            "last_educational_institution",
+            "education_others",
+            "village_name",
             "post",
             "upazila",
             "district",
             "email",
             "phone",
-            "emergency-mobile",
-            "village-name-permanent",
-            "post-permanent",
-            "upazila-permanent",
-            "district-permanent",
+            "emergency_mobile",
+            "village_name_permanent",
+            "post_permanent",
+            "upazila_permanent",
+            "district_permanent",
             "whatsup",
             "facebook",
-            "event-registration-github",
-            "t-shirt",
-            "own-fee",
-            "guest-fee",
-            "total-fee",
+            "guest",
+            "t_shirt",
+            "own_fee",
+            "guest_fee",
+            "total_fee",
             "payment_details",
             "transection_id",
             "password",
         ) ;
         $data['status']='2';
         $data['username']=trim($request->phone);
-        $data['password']=trim($request->phone);
 
         if ($request->hasFile('picture')) {
             $fileNames =  $request->file('picture')->store('public');
@@ -89,9 +89,8 @@ class RegistrationController extends Controller
 
         $response=User::create($data);
 
-            dd($response);
         if ($response) {
-            return redirect()->back()->with('success', 'Registration Successfull!');
+            return redirect()->back()->with('message', 'Registration Successfull!');
         } else {
             return redirect()->back()->with('error', 'Registration Failed!');
         }

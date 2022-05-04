@@ -23,6 +23,10 @@
 	<link rel="stylesheet" href="{{asset('/assets/css/fonts.css')}}" type="text/css" />
 	<link rel="stylesheet" href="{{asset('/assets/css')}}/colors.php?color=222" type="text/css" />
 	<link rel="stylesheet" href="{{asset('/assets/css/conference.css')}}" type="text/css" />
+
+    <link rel="stylesheet" type="text/css"
+     href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
 	<!-- / -->
         @yield('style')
 	<!-- Document Title
@@ -214,6 +218,8 @@
 	============================================= -->
 	<script src="{{asset('/assets/js')}}/functions.js"></script>
 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 	<script>
 
 		jQuery(document).ready( function(){
@@ -247,6 +253,43 @@
 		});
 
 	</script>
+    <script>
+        @if(Session::has('message'))
+        toastr.options =
+        {
+            "closeButton" : true,
+            "progressBar" : true
+        }
+                toastr.success("{{ session('message') }}");
+        @endif
+
+        @if(Session::has('error'))
+        toastr.options =
+        {
+            "closeButton" : true,
+            "progressBar" : true
+        }
+                toastr.error("{{ session('error') }}");
+        @endif
+
+        @if(Session::has('info'))
+        toastr.options =
+        {
+            "closeButton" : true,
+            "progressBar" : true
+        }
+                toastr.info("{{ session('info') }}");
+        @endif
+
+        @if(Session::has('warning'))
+        toastr.options =
+        {
+            "closeButton" : true,
+            "progressBar" : true
+        }
+                toastr.warning("{{ session('warning') }}");
+        @endif
+      </script>
     @yield('js')
 </body>
 </html>
