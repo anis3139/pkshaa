@@ -11,14 +11,14 @@
 					<div class="container dark py-5 py-md-0">
 						<div class="row justify-content-between mt-5 col-mb-50">
 							<div class="col-lg-6 parallax" data-0="transform: translateY(0px); opacity: 1" data-300="transform: translateY(50px); opacity: 0">
-								<span class="gradient-underline h4">SemiColonWeb 2021</span>
-								<h2 class="fw-bold display-2 mb-0">Canvas Development Conference.</h2>
+								<span class="gradient-underline h4">Subarna jayanti 2022</span>
+								<h2 class="fw-bold display-2 mb-0">Pilgiri Kharul High School</h2>
 							</div>
 							<div class="col-lg-6 d-flex align-items-lg-end flex-column parallax text-start text-lg-end mb-5 mb-lg-0" data-0="transform: translateY(0px)" data-700="transform: translateY(-50px)">
 								<div class="mt-auto">
-									<h2 class="mb-2 gradient-text">March 17-19, 2021</h2>
-									<h4 class="fw-normal">795 Folsom Ave, Suite 600<br>San Francisco, CA 94107</h4>
-									<a href="#section-tickets" class="button button-xxlarge button-white button-gradient m-0" data-scrollto="#section-tickets">Get Tickets Now</a>
+									<h2 class="mb-2 gradient-text">December, 2022</h2>
+									<h4 class="fw-normal">Pilgiri Kharul Abbas Ali Addarsho<br>High School</h4>
+									<a href="{{route('user.registration')}}" class="button button-xxlarge button-white button-gradient m-0">Get Tickets Now</a>
 								</div>
 							</div>
 						</div>
@@ -52,22 +52,22 @@
 								<p class="text-white-50">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, vel omnis repellendus mollitia, explicabo, maiores quisquam numquam quia reiciendis sit, accusantium atque ex animi perspiciatis ab odit earum assumenda aliquid.</p>
 								<div class="row mt-5">
 									<div class="col-6 col-sm-3">
-										<div class="counter gradient-text"><span data-from="0" data-to="3" data-refresh-interval="1" data-speed="400"></span></div>
+										<div class="counter gradient-text"><span data-from="0" data-to="2" data-refresh-interval="1" data-speed="400"></span></div>
 										<h5 class="font-body">Day Event</h5>
 									</div>
 
 									<div class="col-6 col-sm-3">
-										<div class="counter gradient-text"><span data-from="1" data-to="11" data-refresh-interval="2" data-speed="600"></span>+</div>
+										<div class="counter gradient-text"><span data-from="1" data-to="20" data-refresh-interval="2" data-speed="600"></span>+</div>
 										<h5 class="font-body">Speakers</h5>
 									</div>
 
 									<div class="col-6 col-sm-3">
-										<div class="counter gradient-text"><span data-from="1" data-to="23" data-refresh-interval="3" data-speed="1200"></span>+</div>
+										<div class="counter gradient-text"><span data-from="1" data-to="50" data-refresh-interval="3" data-speed="1200"></span>+</div>
 										<h5 class="font-body">Sponsors</h5>
 									</div>
 
 									<div class="col-6 col-sm-3">
-										<div class="counter gradient-text"><span data-from="100" data-to="500" data-refresh-interval="50" data-speed="1500"></span>+</div>
+										<div class="counter gradient-text"><span data-from="100" data-to="2500" data-refresh-interval="50" data-speed="1500"></span>+</div>
 										<h5 class="font-body">Participants</h5>
 									</div>
 								</div>

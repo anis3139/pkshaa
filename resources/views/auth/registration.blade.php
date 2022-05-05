@@ -292,7 +292,7 @@
 
                                     <p class="heading-2 mt-2">Registration Payment<span class="required-fieled"> *</span></p>
                                             <div class="cart_item row">
-                                                <div class="cart-product-name col-md-6"  id="deliveryLocation">
+                                                <div class="cart-product-name col-md-2"  id="deliveryLocation">
                                                     <label><input type="radio" checked name="payment_details" id="green"
                                                             value="cash">
                                                         Cash</label><br>
@@ -302,7 +302,7 @@
                                                         Bank</label><br>
                                                 </div>
 
-                                                <div class="cart-product-name col-md-6">
+                                                <div class="cart-product-name col-md-10">
 
                                                     <div class="green box bkash">
                                                         <p>Receiver Name</p>
@@ -311,22 +311,35 @@
                                                     <div class="blue box">
                                                         <p>Bkash Merchant Number:</p>
                                                         <p>
-
-                                                          00000000000000000
+                                                            01712059603
                                                         </p>
                                                     </div>
                                                     <div class="yellow box">
-                                                        <p>Bank Details:</p>
+                                                    <div class="row">
+
+                                                         <p class="heading-2 mb-2">Bank Details:</p>
+                                                        <div class="col-md-6">
+                                                            <p style="margin: 0px; padding:0px;">A/C: Name: Subarna jayanti 2022</p>
+                                                            <p style="margin: 0px; padding:0px;">A/C No: 9901184055995</p>
+                                                            <p style="margin: 0px; padding:0px;">Bank Name: Al Arafah Islami Bank Ltd.</p>
+                                                            <p style="margin: 0px; padding:0px;">Branch Name: Agent Banking</p>
+                                                     </div>
+                                                      <div class="col-md-6">
+                                                        <p style="margin: 0px; padding:0px;">Routing Number: 015270609</p>
+                                                        <p style="margin: 0px; padding:0px;">SWIFT Code: ALARBDDH</p>
+                                                        <p style="margin: 0px; padding:0px;">Pilgiri Outlet Office Number: 01813616677</p>
+                                                      </div>
+                                                    </div>
                                                     </div>
                                                     <input  required class="form-control" type="text"
-                                                    name="transection_id" placeholder="Receiver Name / Transaction ID" value="{{old('transection_id')}}">
+                                                    name="transection_id" placeholder="Enter Your Receiver Name / Transaction ID" value="{{old('transection_id')}}">
                                                 </div>
                                             </div>
 
 
                                     <div class="row mt-3">
 
-                                        <p class="heading-2 mt-2">Create Account</p>
+                                        <h3 class="heading mt-3">Create Account</h3>
                                         <div class="col-sm-12 col-md-6 form-group ">
                                             <label>Password <span class="required-fieled"> *</span>:</label>
                                             <input required type="password" name="password" id="password" class="form-control"   min="6" placeholder="Enter your password">
@@ -339,7 +352,7 @@
                                     </div>
 
 									<div class="col-12 mt-5">
-										<button type="submit"  class="btn btn-primary  btn-lg btn-block">Submit</button>
+										<button type="submit"  class="btn btn-primary  button button-xxlarge ">Registration</button>
 									</div>
 
 								</form>
