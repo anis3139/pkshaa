@@ -49,6 +49,7 @@ class RegistrationController extends Controller
             "birth_date",
             "nationality",
             "nid",
+            "religion",
             "ssc",
             "last_educational_qualification",
             "last_educational_institution",

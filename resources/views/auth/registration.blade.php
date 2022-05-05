@@ -26,7 +26,10 @@
         width: 250px;
         display: block;
     }
-
+    .required-fieled{
+        color: red;
+        font-size: 20px;
+    }
     .box {
             color: #fff;
             padding: 20px;
@@ -85,37 +88,36 @@
 					<div class="form-widgets">
 
 						<div class="form-result"></div>
-                        @include('errors.message')
                         @include('errors.errorMessage')
 						<div class="row">
 							<div class="col-lg-12">
 								<form class="row"  action="{{route('user.registration.store')}}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <h3 class="heading">Personal Information</h3>
-									<div class="col-6 form-group">
-										<label>Name (English):</label>
-										<input type="text" name="name" required id="name" class="form-control required" value="" placeholder="Enter your name in english">
+									<div class="col-sm-12 col-md-6 form-group">
+										<label>Name (English) <span class="required-fieled"> *</span>:</label>
+										<input type="text" name="name" required id="name" class="form-control required" value="{{old('name')}}" placeholder="Enter your name in english">
 									</div>
-                                    <div class="col-6 form-group">
+                                    <div class="col-sm-12 col-md-6 form-group">
 										<label>Name (Bangla):</label>
-										<input type="text" required name="name_bn" id="name_bn" class="form-control required" value="" placeholder="Enter your name in bangla">
+										<input type="text" name="name_bn" id="name_bn" class="form-control required" value="{{old('name_bn')}}" placeholder="Enter your name in bangla">
 									</div>
-									<div class="col-6 form-group">
-										<label>Fathers Name:</label>
-										<input type="text" name="fathers_name" id="fathers_name" class="form-control required" value="" placeholder="Enter your fathers name">
+									<div class="col-sm-12 col-md-6 form-group">
+										<label>Fathers Name <span class="required-fieled"> *</span>:</label>
+										<input type="text" required name="fathers_name" id="fathers_name" class="form-control required" value="{{old('fathers_name')}}" placeholder="Enter your fathers name">
 									</div>
-									<div class="col-6 form-group">
+									<div class="col-sm-12 col-md-6 form-group">
 										<label>Mothers Name:</label>
-										<input type="text" name="mothers_name" id="mothers_name" class="form-control required" value="" placeholder="Enter your mothers name">
+										<input type="text" name="mothers_name" id="mothers_name" class="form-control required" value="{{old('mothers_name')}}" placeholder="Enter your mothers name">
 									</div>
-									<div class="col-6 form-group">
+									<div class="col-sm-12 col-md-6 form-group">
 										<label>Spouse Name (optional):</label>
-										<input type="text" name="spouse_name" id="spouse_name" class="form-control" value="" placeholder="Enter your spouse name">
+										<input type="text" name="spouse_name" id="spouse_name" class="form-control" value="{{old('spouse_name')}}" placeholder="Enter your spouse name">
 									</div>
-                                    <div class="col-6 form-group">
-										<label>Gender:</label><br>
+                                    <div class="col-sm-12 col-md-6 form-group">
+										<label>Gender <span class="required-fieled"> *</span> :</label><br>
 										<div class="form-check form-check-inline">
-											<input class="form-check-input required" type="radio" name="gender"id="event-registration-gender-male" value="Male">
+											<input checked class="form-check-input required" type="radio" name="gender"id="event-registration-gender-male" value="Male">
 											<label class="form-check-label nott" for="event-registration-gender-male">Male</label>
 										</div>
 										<div class="form-check form-check-inline">
@@ -125,33 +127,33 @@
 									</div>
 
 
-									<div class="col-6 form-group">
+									<div class="col-sm-12 col-md-6 form-group">
 										<label>Blood Group:</label>
-										<input type="text" name="blood_group" id="blood_group" class="form-control" value="" placeholder="Enter your blood group">
+										<input type="text" name="blood_group" id="blood_group" class="form-control" value="{{old('blood_group')}}" placeholder="Enter your blood group">
 									</div>
 
-									<div class="col-6 form-group">
+									<div class="col-sm-12 col-md-6 form-group">
 										<label>Date of Birth:</label>
-										<input type="date" name="birth_date" id="birth_date" class="form-control" value="" placeholder="Enter your birth date">
+										<input type="date" name="birth_date" id="birth_date" class="form-control" value="{{old('birth_date')}}" placeholder="Enter your birth date">
 									</div>
-									<div class="col-6 form-group">
+									<div class="col-sm-12 col-md-6 form-group">
 										<label>Nationality:</label>
-										<input type="text" name="nationality" id="nationality" class="form-control" value="" placeholder="Enter your nationality">
+										<input type="text" name="nationality" id="nationality" class="form-control" value="{{old('nationality')}}" placeholder="Enter your nationality">
 									</div>
-									<div class="col-6 form-group">
+									<div class="col-sm-12 col-md-6 form-group">
 										<label>NID:</label>
-										<input type="number" name="nid" id="nid" class="form-control" value="" placeholder="Enter your NID number">
+										<input type="number" name="nid" id="nid" class="form-control" value="{{old('nid')}}" placeholder="Enter your NID number">
 									</div>
-									<div class="col-6 form-group">
+									<div class="col-sm-12 col-md-6 form-group">
 										<label>Religion:</label>
-										<input type="text" name="nid" id="nid" class="form-control" value="" placeholder="Enter your religion">
+										<input type="text" name="religion" id="religion" class="form-control" value="{{old('religion')}}" placeholder="Enter your religion">
 									</div>
-									<div class="col-6 row form-group">
-                                        <div class="col-6 form-group">
-                                            <label>Picture:</label>
-                                            <input type="file" required name="picture" id="picture" class="form-control" value="">
+									<div class="col-sm-12 col-md-6 row form-group">
+                                        <div class="col-sm-12 col-md-6 form-group">
+                                            <label>Picture (Max size: 500kb)  <span class="required-fieled"> * </span> :</label>
+                                            <input type="file" required name="picture" id="picture" class="form-control" value="{{old('picture')}}">
                                         </div>
-                                        <div class="col-6">
+                                        <div class="col-sm-12 col-md-6">
                                             <img src="{{asset('assets/images/profile.jpeg')}}" id="picture-show" alt="" width="150px">
                                         </div>
 									</div>
@@ -161,21 +163,21 @@
 
                                     <h3 class="heading mt-5">Educational Information</h3>
 
-                                    <div class="col-6 form-group">
-										<label>Passing year of SSC:</label>
-										<input required type="text" name="ssc" id="ssc" class="form-control" value="" placeholder="Enter your passing year of ssc">
+                                    <div class="col-sm-12 col-md-6 form-group">
+										<label>Passing year of SSC <span class="required-fieled"> *</span> :</label>
+										<input required type="text" name="ssc" id="ssc" class="form-control" value="{{old('ssc')}}" placeholder="Enter your passing year of ssc">
 									</div>
-                                    <div class="col-6 form-group">
+                                    <div class="col-sm-12 col-md-6 form-group">
 										<label>Last Educational Qualification:</label>
-										<input type="text" name="last_educational_qualification" id="last_educational_qualification" class="form-control" value="" placeholder="Enter your last educational qualification">
+										<input type="text" name="last_educational_qualification" id="last_educational_qualification" class="form-control" value="{{old('last_educational_qualification')}}" placeholder="Enter your last educational qualification">
 									</div>
-                                    <div class="col-6 form-group">
+                                    <div class="col-sm-12 col-md-6 form-group">
 										<label>Last Educational Institution:</label>
-										<input type="text" name="last_educational_institution" id="last_educational_qualification" class="form-control" value="" placeholder="Enter your last educational qualification">
+										<input type="text" name="last_educational_institution" id="last_educational_qualification" class="form-control" value="{{old('last_educational_institution')}}" placeholder="Enter your last educational qualification">
 									</div>
-                                    <div class="col-6 form-group">
+                                    <div class="col-sm-12 col-md-6 form-group">
 										<label>Others:</label>
-										<input type="text" name="education_others" id="education_others" class="form-control" value="" placeholder="Others">
+										<input type="text" name="education_others" id="education_others" class="form-control" value="{{old('education_others')}}" placeholder="Others">
 									</div>
 
 
@@ -186,60 +188,60 @@
                                         <div class="col-md-6">
                                             <p class="heading-2 mt-2">Present Address</p>
                                             <div class="col-12 form-group">
-                                                <label>Village:</label>
-                                                <input required type="text" name="village_name" id="village_name" class="form-control" value="" placeholder="Enter your village name">
+                                                <label>Village <span class="required-fieled"> *</span> :</label>
+                                                <input required type="text" name="village_name" id="village_name" class="form-control" value="{{old('village_name')}}" placeholder="Enter your village name">
                                             </div>
                                             <div class="col-12 form-group">
-                                                <label>Post Office:</label>
-                                                <input required type="text" name="post" id="post" class="form-control" value="" placeholder="Enter your post office">
+                                                <label>Post Office <span class="required-fieled"> *</span> :</label>
+                                                <input required type="text" name="post" id="post" class="form-control" value="{{old('post')}}" placeholder="Enter your post office">
                                             </div>
                                             <div class="col-12 form-group">
-                                                <label>Upazila:</label>
-                                                <input required type="text" name="upazila" id="upazila" class="form-control" value="" placeholder="Enter your upazila">
+                                                <label>Upazila <span class="required-fieled"> *</span> :</label>
+                                                <input required type="text" name="upazila" id="upazila" class="form-control" value="{{old('upazila')}}" placeholder="Enter your upazila">
                                             </div>
                                             <div class="col-12 form-group">
-                                                <label>District:</label>
-                                                <input required type="text" name="district" id="district" class="form-control" value="" placeholder="Enter your district">
+                                                <label>District <span class="required-fieled"> *</span> :</label>
+                                                <input required type="text" name="district" id="district" class="form-control" value="{{old('district')}}" placeholder="Enter your district">
                                             </div>
 
                                             <div class="col-12 form-group">
-                                                <label>Email:</label>
-                                                <input required type="email" name="email" id="email" class="form-control required" value="" placeholder="Enter your Email Address">
+                                                <label>Email <span class="required-fieled"> *</span>:</label>
+                                                <input required type="email" name="email" id="email" class="form-control required" value="{{old('email')}}" placeholder="Enter your Email Address">
                                             </div>
                                             <div class="col-12 form-group">
-                                                <label>Mobile:</label>
-                                                <input required type="text" name="phone" id="phone" class="form-control required" value="" placeholder="Enter your mobile number">
+                                                <label>Mobile <span class="required-fieled"> *</span>:</label>
+                                                <input required type="text" name="phone" id="phone" class="form-control required" value="{{old('phone')}}" placeholder="Enter your mobile number">
                                             </div>
                                             <div class="col-12 form-group">
                                                 <label>Emergency Mobile Number:</label>
-                                                <input type="text" name="emergency_mobile" id="emergency_mobile" class="form-control required" value="" placeholder="Enter your emergency mobile number">
+                                                <input type="text" name="emergency_mobile" id="emergency_mobile" class="form-control required" value="{{old('emergency_mobile')}}" placeholder="Enter your emergency mobile number">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <p class="heading-2 mt-2">Permanent Address</p>
                                             <div class="col-12 form-group">
                                                 <label>Village:</label>
-                                                <input type="text" name="village_name_permanent" id="village_name_permanent" class="form-control" value="" placeholder="Enter your village name">
+                                                <input type="text" name="village_name_permanent" id="village_name_permanent" class="form-control" value="{{old('village_name_permanent')}}" placeholder="Enter your village name">
                                             </div>
                                             <div class="col-12 form-group">
                                                 <label>Post Office:</label>
-                                                <input type="text" name="post_permanent" id="post_permanent" class="form-control" value="" placeholder="Enter your post office">
+                                                <input type="text" name="post_permanent" id="post_permanent" class="form-control" value="{{old('post_permanent')}}" placeholder="Enter your post office">
                                             </div>
                                             <div class="col-12 form-group">
                                                 <label>Upazila:</label>
-                                                <input type="text" name="upazila_permanent" id="upazila_permanent" class="form-control" value="" placeholder="Enter your upazila">
+                                                <input type="text" name="upazila_permanent" id="upazila_permanent" class="form-control" value="{{old('upazila_permanent')}}" placeholder="Enter your upazila">
                                             </div>
                                             <div class="col-12 form-group">
                                                 <label>District:</label>
-                                                <input type="text" name="district_permanent" id="district_permanent" class="form-control" value="" placeholder="Enter your district">
+                                                <input type="text" name="district_permanent" id="district_permanent" class="form-control" value="{{old('district_permanent')}}" placeholder="Enter your district">
                                             </div>
                                             <div class="col-12 form-group">
                                                 <label>Whatsup:</label>
-                                                <input type="text" name="whatsup" id="whatsup" class="form-control" value="" placeholder="Enter your whatsup number">
+                                                <input type="text" name="whatsup" id="whatsup" class="form-control" value="{{old('whatsup')}}" placeholder="Enter your whatsup number">
                                             </div>
                                             <div class="col-12 form-group">
                                                 <label>Facebook:</label>
-                                                <input type="text" name="facebook" id="facebook" class="form-control" value="" placeholder="Enter your facebook id">
+                                                <input type="text" name="facebook" id="facebook" class="form-control" value="{{old('facebook')}}" placeholder="Enter your facebook id">
                                             </div>
                                         </div>
                                     </div>
@@ -253,16 +255,16 @@
                                     <h3 class="heading mt-5">Ceremonial Information</h3>
 
 
-                                    <div class="col-6 form-group">
+                                    <div class="col-sm-12 col-md-6 form-group">
 										<label>No of guest:</label>
 										<div class="input-group">
 											<span class="input-group-text">Own (1) + </span>
-											<input type="number" name="guest" id="guest" class="form-control" value="" placeholder="Enter only guest number">
+											<input type="number" name="guest" id="guest" class="form-control" value="{{old('guest')}}" placeholder="Enter only guest number">
 										</div>
 									</div>
 
-									<div class="col-6 form-group">
-										<label>T Shirt Size</label>
+									<div class="col-sm-12 col-md-6 form-group">
+										<label>T Shirt Size <span class="required-fieled"> *</span>:</label>
 										<select required class="form-select required" name="t-shirt" id="t_shirt">
 											<option value="">-- Select One --</option>
 											<option value="m">Medium (M)</option>
@@ -273,22 +275,22 @@
 									</div>
 
                                     <p class="heading-2 mt-2">Registration Fee</p>
-                                    <div class="col-4 form-group">
-                                        <label>Own Fee:</label>
-                                        <input  type="number" name="own_fee" id="own_fee" class="form-control" value="" placeholder="Enter your own fee">
+                                    <div class="col-sm-12 col-md-4 form-group">
+                                        <label>Own Fee <span class="required-fieled"> *</span>:</label>
+                                        <input  type="number" name="own_fee" id="own_fee" class="form-control" value="{{old('number')}}" placeholder="Enter your own fee">
                                     </div>
-                                    <div class="col-4 form-group">
+                                    <div class="col-sm-12 col-md-4 form-group">
                                         <label>Guest Fee:</label>
-                                        <input  type="number" name="guest_fee" id="guest_fee" class="form-control" value="" placeholder="Enter your guest fee">
+                                        <input  type="number" name="guest_fee" id="guest_fee" class="form-control" value="{{old('guest_fee')}}" placeholder="Enter your guest fee">
                                     </div>
-                                    <div class="col-4 form-group">
-                                        <label>Total:</label>
-                                        <input  type="number" name="total_fee" id="total_fee" class="form-control" value="" placeholder="Enter your total fee">
+                                    <div class="col-sm-12 col-md-4 form-group">
+                                        <label>Total <span class="required-fieled"> *</span>:</label>
+                                        <input  type="number" name="total_fee" id="total_fee" class="form-control" value="{{old('total_fee')}}" placeholder="Enter your total fee">
                                     </div>
 
 
 
-                                    <p class="heading-2 mt-2">Registration Payment</p>
+                                    <p class="heading-2 mt-2">Registration Payment<span class="required-fieled"> *</span></p>
                                             <div class="cart_item row">
                                                 <div class="cart-product-name col-md-6"  id="deliveryLocation">
                                                     <label><input type="radio" checked name="payment_details" id="green"
@@ -317,7 +319,7 @@
                                                         <p>Bank Details:</p>
                                                     </div>
                                                     <input  required class="form-control" type="text"
-                                                    name="transection_id" placeholder="Receiver Name / Transaction ID">
+                                                    name="transection_id" placeholder="Receiver Name / Transaction ID" value="{{old('transection_id')}}">
                                                 </div>
                                             </div>
 
@@ -325,14 +327,14 @@
                                     <div class="row mt-3">
 
                                         <p class="heading-2 mt-2">Create Account</p>
-                                        <div class="col-6 form-group ">
-                                            <label>Password:</label>
-                                            <input required type="password" name="password" id="password" class="form-control" value="" min="6" placeholder="Enter your password">
+                                        <div class="col-sm-12 col-md-6 form-group ">
+                                            <label>Password <span class="required-fieled"> *</span>:</label>
+                                            <input required type="password" name="password" id="password" class="form-control"   min="6" placeholder="Enter your password">
                                         </div>
 
-                                        <div class="col-6 form-group">
-                                            <label>Confirm Password:</label>
-                                            <input required type="password" name="password_confirmation" id="password_confirmation" class="form-control" value="" placeholder="Confirm your password">
+                                        <div class="col-sm-12 col-md-6 form-group">
+                                            <label>Confirm Password <span class="required-fieled"> *</span>:</label>
+                                            <input required type="password" name="password_confirmation" id="password_confirmation" class="form-control"   placeholder="Confirm your password">
                                         </div>
                                     </div>
 

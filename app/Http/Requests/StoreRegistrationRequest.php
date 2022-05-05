@@ -26,6 +26,7 @@ class StoreRegistrationRequest extends FormRequest
         return [
             'name' => 'required',
             // 'username' => 'required|string|max:255|min:4|alpha_dash|unique:users,username,',
+            'picture' =>  'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:1024',
             'email' => 'required|string|email|max:255|min:4|unique:users,email,',
             'phone' => 'required|min:10|max:20|unique:users,phone,',
             'password'=> 'required|min:6',
